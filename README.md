@@ -94,7 +94,7 @@ $ sh kcptun.sh help
 
 #### SS 客户端配置
 
-根据系统下载客户端，我常用 macOS 和 windows 10，点下面链接下载最新客户端。
+根据系统下载客户端，我常用 macOS 和 windows 10 系统，点下面链接下载最新客户端。
 
 macOS 10.11+: https://github.com/shadowsocks/ShadowsocksX-NG/releases
 
@@ -102,7 +102,9 @@ windows: https://github.com/shadowsocks/shadowsocks-windows/releases
 
 启动后填入服务器端生成的配置即可。建议点上开机启动。
 
-一般到这里配置以及完成，但是 SS 直连干扰比较大，速度一般不太理想，需要配合插件提速。锐速或者 BBR 相对配置较简单，但是个人使用感觉效果不佳，建议使用 kcptun，缺点是配置稍微繁琐一点。
+一般到这里配置已经完成，但是 SS 直连干扰比较大，速度一般不会太理想，需要配合插件提速。
+
+锐速或者 BBR 相对配置较简单，但是个人使用感觉效果不佳，建议使用 kcptun，缺点是配置稍微繁琐一点。
 
 #### kcptun 客户端配置
 
@@ -116,14 +118,16 @@ Macbook 送修了，下面以 Windows 10 为例。
 
 将服务器端生成的 json 配置拷贝到本地文件，这里我复制到了 `config.json` 里。
 
-为了方便启动，建议写一个启动文件来后台运行 kcptun。下面是一个 `runKcptun.vbs` 的例子。注意将配置文件和 exe 文件放在同一个目录。
+为了方便启动，建议写一个启动文件来后台运行 kcptun。下面是一个 `runKcptun.vbs` 的例子。
+
+注意将配置文件和 exe 文件放在同一个目录，`your-path-to-kcptun` 替换成你的路径。
 
 ```vbs
 Set ws = CreateObject("Wscript.Shell")
 ws.run "/your-path-to-kcptun/client_windows_amd64.exe -c config.json", 0
 ```
 
-将这个文件创建快捷方式丢到 windows 的 startup 目录里使其开机自动启动。
+将这个文件创建快捷方式，并丢到 windows 的 startup 目录里使其开机自动启动。
 
 > windows 10 下 startup 目录快速打开方式：win + r 打开运行窗口，输入 `shell:startup` 回车。
 
@@ -131,6 +135,6 @@ kcptun 客户端程序运行后还需要 SS 配置配合。
 
 在 SS 中添加一个服务器配置，和之前配置信息一致，但是服务器地址改为 `127.0.0.1`，且端口号改为 kcptun 配置文件里 `localaddr` 字段的值。
 
-> kcptun 只是代理了流量，SS 只是走了 kcptun 的代理去连接远程服务器，所以这里将服务器和端口号改成 kcptun 的本地代理，但是密码和加密方式还是需要选择 SS 原本的设置。
+> kcptun 仅代理流量，根本上 SS 只是走了 kcptun 的代理去连接远程服务器，虽然将配置中的服务器和端口号改成了 kcptun 的本地代理，但是密码和加密方式还是需要填入 SS 原本的设置。
 
 到此网络环境的设置就完成了。
