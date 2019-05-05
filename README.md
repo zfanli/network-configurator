@@ -1,4 +1,4 @@
-# netwrok-configurator
+# network-configurator
 
 网络配置 guide or tool。
 
@@ -87,7 +87,7 @@ $ bash <(curl -L -s https://install.direct/go.sh)
 
 #### 配置文件
 
-V2Ray 的配置文件处于方便阅读的考虑默认使用 JSON with comment 格式。JSON 源于 JavaScript 的对象标记，后来逐渐成为前后端通信数据格式的首选，本文默认你已经了解什么是 JSON，如果你并不了解，请自行百度。
+V2Ray 的配置文件出于方便阅读的考虑默认使用 JSON with comment 格式。JSON 源于 JavaScript 的对象标记，后来逐渐成为前后端通信数据格式的首选，本文默认你已经了解什么是 JSON，如果你并不了解，请自行百度。
 
 V2Ray 的配置文件格式大致如下。服务器端和客户端的配置格式是一致的，区别在于入口和出口的配置内容不同。
 
