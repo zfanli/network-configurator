@@ -2,6 +2,17 @@
 
 恢复与 GitHub 的 git 读写权限。
 
+首先我们需要安装 Git。Mac 下安装 Xcode 会自动安装 git，win10 下则需要手动到 git 官网去下载安装包。
+
+安装完成后，运行下面的命令来对 git 做一些基础配置。
+
+```shell
+$ git config --global user.name
+$ git config --global user.email
+```
+
+> 在 Mac 环境下需要使用 `sudo` 前缀。
+
 ### SSH 访问 keys
 
 Official guide: https://help.github.com/en/articles/connecting-to-github-with-ssh
