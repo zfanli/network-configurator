@@ -163,6 +163,25 @@ $ gpg --armor --export 3AA5C34371567BD2
 
 将剪贴板的内容粘贴到输入框内并保存，GPG key 到添加就完成了。
 
-#### 注意 ⚠️
+#### 告诉 Git 使用 GPG
 
-在 VSCode 下在设置中勾选 `git.enableCommitSigning`，即可打开 GPG 支持。但是在使用 GPG 验证提交的情况下，首次 commit 需要在命令行验证密码
+输入下面的命令配置 git 使用的 GPG key ID。这里依旧以 `3AA5C34371567BD2` 为例，你需要将之替换为你自己的 ID。
+
+```shell
+$ git config --global user.signingkey 3AA5C34371567BD2
+```
+
+并且开启自动使用 GPG 验证提交。
+
+```shell
+$ git config --global commit.gpgsign true
+```
+
+在某些情况下你可能需要下面的命令，将 GPG key 添加到你的 bash profile 中。
+
+```shell
+$ test -r ~/.bash_profile && echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
+$ echo 'export GPG_TTY=$(tty)' >> ~/.profile
+```
+
+到此 GPG 的设置就完成了，每次当你执行提交的时候，会弹出 GPG 密码框要求你验证密码。并且你的提交在 GitHub 上会出现 `Verified` 标记，表示这个提交来自可信源。
