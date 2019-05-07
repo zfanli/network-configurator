@@ -24,7 +24,7 @@ SS 的诞生之初只是作者的一个自用工具，后来作者觉得不错�
 
 V2Ray 从诞生以来目标就是实现一个功能化的网络加密数据传输模块。
 
-- [GitHub SSH & GPG keys](#GitHub-SSH-&-GPG-keys)
+- [GitHub SSH & GPG keys](#github-ssh--gpg-keys)
 
 快速恢复 GitHub 访问权限。
 
