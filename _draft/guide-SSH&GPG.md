@@ -111,7 +111,7 @@ $ gpg
 $ gpg --full-generate-key
 ```
 
-你会看到一个提示，要求选择加密模式，直接回车选择默认的 `RSA and RSA`。、
+你会看到一个提示，要求选择加密模式，直接回车选择默认的 `RSA and RSA`。
 
 ```
 Please select what kind of key you want:
