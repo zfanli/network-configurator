@@ -7,8 +7,8 @@
 安装完成后，运行下面的命令来对 git 做一些基础配置。
 
 ```shell
-$ git config --global user.name
-$ git config --global user.email
+$ git config --global user.name your_name
+$ git config --global user.email your_email@example.com
 ```
 
 > 在 Mac 环境下需要使用 `sudo` 前缀。
