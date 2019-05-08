@@ -1,4 +1,4 @@
-## GitHub SSH & GPG keys
+# GitHub SSH & GPG keys
 
 恢复与 GitHub 的 git 读写权限。
 
@@ -13,11 +13,11 @@ $ git config --global user.email your_email@example.com
 
 > 在 Mac 环境下需要使用 `sudo` 前缀。
 
-### SSH 访问 keys
+## SSH 访问 keys
 
 Official guide: https://help.github.com/en/articles/connecting-to-github-with-ssh
 
-#### 生成 SSH key
+### 生成 SSH key
 
 以 macOS 为例。
 
@@ -48,7 +48,7 @@ $ ssh-keygen -t rsa -b 4096 -C "你的邮箱@example.com"
 
 SSH key 生成就完成了。
 
-#### 添加 SSH key 到 ssh-agent 中管理
+### 添加 SSH key 到 ssh-agent 中管理
 
 接下来将这个 key 添加到 ssh-agent。运行下面的命令启动 ssh-agent。
 
@@ -73,7 +73,7 @@ $ ssh-add -K ~/.ssh/id_rsa
 
 添加完成。
 
-#### 添加 SSH key 到 GitHub
+### 添加 SSH key 到 GitHub
 
 输入下面的命令，将公钥拷贝到剪贴板。
 
@@ -87,11 +87,11 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 添加完成。
 
-### GPG Signature keys
+## GPG Signature keys
 
 Official guide: https://help.github.com/en/articles/managing-commit-signature-verification
 
-#### 生成 GPG key
+### 生成 GPG key
 
 GPG 工具并非系统自带，所以首先确认系统中有没有 GPG 工具。输入下面的命令，如果报错了，说明系统中不存在 GPG 工具，这时需要去 [GPG 官网下载](https://www.gnupg.org/download/)。
 
@@ -144,7 +144,7 @@ Key is valid for? (0)
 
 接着会要求你确认设置是否正确，然后需要你输入名称、邮件和备注，并设定密码。做完这些，稍等片刻 key 的生成就完成了。
 
-#### 添加 GPG key 到 GitHub
+### 添加 GPG key 到 GitHub
 
 现在使用下面的命令查询存在的 GPG key。
 
@@ -174,7 +174,7 @@ $ gpg --armor --export 3AA5C34371567BD2
 
 将剪贴板的内容粘贴到输入框内并保存，GPG key 到添加就完成了。
 
-#### 告诉 Git 使用 GPG
+### 告诉 Git 使用 GPG
 
 输入下面的命令配置 git 使用的 GPG key ID。这里依旧以 `3AA5C34371567BD2` 为例，你需要将之替换为你自己的 ID。
 

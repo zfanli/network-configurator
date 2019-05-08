@@ -2,13 +2,13 @@
 
 快速恢复科学网络配置和 GitHub 的访问 keys。
 
-### 简介
+## 简介
 
 近期经历了 win10 换机器，MacBook 送修等事情，硬盘前前后后格式化了两三次。并且每次格式化之后，都要花 1、2 天时间来将系统恢复到日常使用的状态。
 
 时间基本都花在了翻查资料和安装软件上，由于网络配置基本上配置完成一次之后很长一段时间都不需要改动，所以这方面只记得一个流程，很多细节都需要重新翻查，所以这次计划将翻查过的各种 guide 整合起来，简化、节省翻查资料的时间，并且如果可行的话，制作成一个一键配置脚本，来最大程度简化步骤。
 
-### 内容
+## 内容
 
 > TODO
 
@@ -161,7 +161,7 @@ kcptun 客户端程序运行后还需要 SS 配置配合。
 
 到此网络环境的设置就完成了。
 
-## GitHub SSH & GPG keys
+# GitHub SSH & GPG keys
 
 恢复与 GitHub 的 git 读写权限。
 
@@ -176,11 +176,11 @@ $ git config --global user.email your_email@example.com
 
 > 在 Mac 环境下需要使用 `sudo` 前缀。
 
-### SSH 访问 keys
+## SSH 访问 keys
 
 Official guide: https://help.github.com/en/articles/connecting-to-github-with-ssh
 
-#### 生成 SSH key
+### 生成 SSH key
 
 以 macOS 为例。
 
@@ -211,7 +211,7 @@ $ ssh-keygen -t rsa -b 4096 -C "你的邮箱@example.com"
 
 SSH key 生成就完成了。
 
-#### 添加 SSH key 到 ssh-agent 中管理
+### 添加 SSH key 到 ssh-agent 中管理
 
 接下来将这个 key 添加到 ssh-agent。运行下面的命令启动 ssh-agent。
 
@@ -236,7 +236,7 @@ $ ssh-add -K ~/.ssh/id_rsa
 
 添加完成。
 
-#### 添加 SSH key 到 GitHub
+### 添加 SSH key 到 GitHub
 
 输入下面的命令，将公钥拷贝到剪贴板。
 
@@ -250,11 +250,11 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 添加完成。
 
-### GPG Signature keys
+## GPG Signature keys
 
 Official guide: https://help.github.com/en/articles/managing-commit-signature-verification
 
-#### 生成 GPG key
+### 生成 GPG key
 
 GPG 工具并非系统自带，所以首先确认系统中有没有 GPG 工具。输入下面的命令，如果报错了，说明系统中不存在 GPG 工具，这时需要去 [GPG 官网下载](https://www.gnupg.org/download/)。
 
@@ -307,7 +307,7 @@ Key is valid for? (0)
 
 接着会要求你确认设置是否正确，然后需要你输入名称、邮件和备注，并设定密码。做完这些，稍等片刻 key 的生成就完成了。
 
-#### 添加 GPG key 到 GitHub
+### 添加 GPG key 到 GitHub
 
 现在使用下面的命令查询存在的 GPG key。
 
@@ -337,7 +337,7 @@ $ gpg --armor --export 3AA5C34371567BD2
 
 将剪贴板的内容粘贴到输入框内并保存，GPG key 到添加就完成了。
 
-#### 告诉 Git 使用 GPG
+### 告诉 Git 使用 GPG
 
 输入下面的命令配置 git 使用的 GPG key ID。这里依旧以 `3AA5C34371567BD2` 为例，你需要将之替换为你自己的 ID。
 
