@@ -22,6 +22,13 @@
       }
 ```
 
+> 2019/6/5 被侦测到导致封锁，重新尝试添加 header type `utp`。一般类型参考如下。
+>
+> - "srtp" FaceTime
+> - "utp" BT download
+> - "wechat-vedio" just like its name
+> - "dtls" DTLS 1.2
+
 ## 简介
 
 近期经历了 win10 换机器，MacBook 送修等事情，硬盘前前后后格式化了两三次。并且每次格式化之后，都要花 1、2 天时间来将系统恢复到日常使用的状态。
