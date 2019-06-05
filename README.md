@@ -7,20 +7,20 @@
 > 2019/6/2 近期杂事繁多，配置器暂时搁浅。接下来准备配置家庭 NAS + 软路由一体机，届时还会走一遍网络配置流程，并且对已经安装了网络代理的机器清除设置，到时候再完善配置流程，考虑如何脚本化。目前为止的内容足够应对紧急恢复网络配置。
 
 > 2019/6/3 突发情况，救命配置。
-
-```json
-      "streamSettings": {
-        "network": "mkcp",
-        "kcpSettings": {
-          "uplinkCapacity": 5,
-          "downlinkCapacity": 100,
-          "congestion": true,
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-```
+>
+> ```json
+>      "streamSettings": {
+>        "network": "mkcp",
+>        "kcpSettings": {
+>          "uplinkCapacity": 5,
+>          "downlinkCapacity": 100,
+>          "congestion": true,
+>          "header": {
+>            "type": "none"
+>          }
+>        }
+>      }
+> ```
 
 > 2019/6/5 被侦测到导致封锁，重新尝试添加 header type `utp`。一般类型参考如下。
 >
