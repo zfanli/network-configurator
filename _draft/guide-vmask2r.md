@@ -88,3 +88,25 @@ v2r 的配置文件格式大致如下。服务器端和客户端的配置格式�
 ```
 
 我们只需要定义我们需要的配置，对于不需要的配置对象，可以省略。
+
+After settings in the outbound.
+
+```json
+  "streamSettings": {
+    "network": "kcp",
+    "security": "none",
+    "tlsSettings": {
+      "allowInsecure": true
+    },
+    "kcpSettings": {
+      "readBufferSize": 1,
+      "downlinkCapacity": 100,
+      "mtu": 1350,
+      "header": {
+        "type": "utp"
+      },
+      "writeBufferSize": 1,
+      "uplinkCapacity": 5
+    }
+  }
+```
